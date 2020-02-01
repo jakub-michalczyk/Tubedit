@@ -1,0 +1,1161 @@
+@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque|Roboto+Condensed&display=swap');
+
+$lightred: #ff0000;
+$darkred: darken(#ff0000, 20%);
+
+@mixin flexCentering($alignItem, $justifyCont) {
+    display: flex;
+    justify-content: $justifyCont;
+    align-items:$alignItem
+}
+*{
+    font-family: 'Darker Grotesque', sans-serif;
+    color:#fff;
+}
+
+@media screen and (max-width: 1000px) {
+    #container{
+        flex-direction: column !important;
+    }
+    #toolsBox{
+        width: 100% !important;
+        height: auto !important;
+        padding:20px 0 !important;
+    }
+    #markerContainer{
+        top:53% !important;
+        left:1.5% !important;
+        width:96.5% ;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    //iPhone 5/SE
+    #container{
+        height: auto !important;
+    }
+    .infoBox{
+        @include flexCentering(center, center);
+        width:95% !important
+    }
+    #savePopup{
+        width:85% !important;
+        height:60% !important;
+        h1{
+            text-align: center;
+        }
+    }
+    #audioBox{
+        p{
+            padding:0 !important;
+            #saveEdits{
+                margin-bottom:0 !important;
+            }
+        }
+    }
+    .simpleTool, #linkPopup{
+        position: absolute !important;
+        height:50% !important;
+        width:100% !important;
+        top:75% !important;
+        #saveEdits{
+            margin-top:0 !important;
+        }
+    }
+    #textBox{
+        @include flexCentering(center, center);
+        position: absolute !important;
+        height:auto !important;
+        width:100% !important;
+        top:75% !important; 
+        #saveEdits{
+            margin:15% 0 !important;
+        } 
+    }
+    #linkPopup{
+        font-size:17px !important;
+        h1{
+            margin-bottom:0 !important;
+        }
+        p{
+            padding:20px 0;
+        }
+    }
+    #goBack{
+        top:10% !important;
+    }
+    #popup{
+        width:80% !important;
+        height:70% !important;
+        h1{
+            text-align: center;
+        }
+        #addUrl{
+            @include flexCentering(center, center);
+            input{
+                width:70% !important;
+            }
+        }
+        #closePopup{
+            top:10% !important;
+            left:85% !important;
+            transform: translate(-5%, -85%) !important;
+        }
+    }
+    #imgStyleBox, #videoStyleBox, #brushBox{
+        position: absolute !important;
+        top:50% !important;
+        padding:0 !important;
+        height:75% !important;
+        width:100% !important;
+        #switchSides{
+            display: none;
+        }
+        #hideToolBox{
+            top:0.5% !important;
+            left:0.5% !important;
+        }
+    }
+}
+
+@media screen and (min-width: 360px) {
+    //Galaxy S5
+    #container{
+        min-height: 100% !important;
+        height:auto !important;
+    }
+    #whatIsIt{
+        margin:0 !important;
+    }
+    .simpleTool, #linkPopup{
+        height:40% !important;
+    }
+    #imgStyleBox, #videoStyleBox, #brushBox{
+        height:60% !important;
+    }
+
+}
+
+@media screen and (min-width: 375px){
+    //iPhone X
+    #container{
+        height:100% !important;
+    }
+    #container #player{
+        height:70% !important
+    }
+    .simpleTool, #linkPopup, #textBox{
+        top:70% !important;
+    }
+}
+
+@media screen and (min-width: 768px){
+    //iPad
+    #toolsBox{
+        padding:0 !important;
+        width: 35% !important;
+        height:100% !important;
+    }
+    #container{
+        flex-direction: row !important;
+        width:100% !important;
+        min-height: auto !important;
+        height: 90% !important;
+        #player{
+            height:100% !important;
+        }
+    }
+    .tool{
+        margin:5px !important;
+    }
+    .tubeEditBtn{
+        text-align: center;
+        width:150px !important;
+    }
+    #markerContainer{
+        left:1% !important;
+        top:89% !important;
+        display: block;
+    }
+    .simpleTool, #linkPopup{
+        position: absolute !important;
+        height:100% !important;
+        width:30% !important;
+        top:0% !important;
+        p{
+            width:85% !important;
+            max-width: 100% !important;
+        }
+        #saveEdits{
+            padding:0 !important;
+            font-size:15px !important;
+            margin-top:0 !important;
+        }
+    }
+    #textBox{
+        @include flexCentering(center, center);
+        position: absolute !important;
+        height:100% !important;
+        width:30% !important;
+        top:0% !important;
+        right:0% !important; 
+        #saveEdits{
+            margin:15% 0 !important;
+        } 
+    }
+    #linkPopup{
+        font-size:17px !important;
+        h1{
+            margin-bottom:0 !important;
+        }
+        p{
+            padding:20px 0;
+        }
+    }
+    #imgStyleBox, #videoStyleBox, #brushBox{
+        position: fixed !important;
+        top:0% !important;
+        padding:0 30px !important;
+        height:100% !important;
+        width:45% !important;
+        #switchSides{
+            top: 0.5% !important;
+            left:15% !important;
+            display: flex !important;
+        }
+    }
+    #brushBox{
+        padding:0 !important;
+        width:30% !important;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    //iPad Pro
+    #popup, #savePopup{
+        width:60% !important;
+        height: 50% !important;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    //PC
+    #toolsBox{
+        padding:0 !important;
+        width: 19.5% !important;
+        height:100% !important;
+    }
+    #container{
+        flex-direction: row !important;
+        width:100% !important;
+        min-height: auto !important;
+        height: 90% !important;
+        #player{
+            height:100% !important;
+        }
+    }
+    .simpleTool, #linkPopup{
+        position: absolute !important;
+        height:100% !important;
+        width:15% !important;
+        top:0% !important;
+        p{
+            padding:0 !important;
+            margin:20px 0 !important;
+            width:85% !important;
+            max-width: 100% !important;
+        }
+        #saveEdits{
+            padding:3px 5px !important;
+            font-size:15px !important;
+            margin-top:0 !important;
+        }
+    }
+    #linkPopup{
+        #saveEdits{
+            margin:20px !important;
+        }
+    }
+    #textBox{
+        @include flexCentering(center, center);
+        position: absolute !important;
+        height:100% !important;
+        width:15% !important;
+        top:0% !important;
+        right:0% !important; 
+        #saveEdits{
+            padding:3px 5px !important;
+            margin:15% 0 !important;
+        } 
+    }
+    #imgStyleBox, #videoStyleBox, #brushBox{
+        position: fixed !important;
+        top:0% !important;
+        padding:0 30px !important;
+        height:100% !important;
+        width:20% !important;
+        #switchSides{
+            top: 0.5% !important;
+            left:15% !important;
+            display: flex !important;
+        }
+    }
+    #brushBox{
+        padding:3px 5px !important;
+        width:15% !important;
+    }
+}
+
+body, html{
+    background: $lightred;
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%;
+}
+#container{
+    @include flexCentering(center, center);
+    height: auto;
+    #player{
+            width:100%;
+            height:100%;
+        iframe{
+            width:100%;
+            height:100%;
+        }
+        
+    }
+    #toolsBox{
+        @include flexCentering(space-between, center);
+        flex-wrap: wrap;
+        width:30%;
+        height:100%;
+        color:#000;
+        background:#0d0d0d;
+        .tool{
+            @include flexCentering(center, center);
+            padding:10px;
+            width:60px;
+            height:60px;
+            margin:20px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .2s;
+            &:hover{
+                background: #1d1d1d;
+            }
+            img{
+                width:30px;
+                height:30px;
+            }
+        }
+
+    }
+}
+#buttonsBox{
+    @include flexCentering(center, center);
+    flex-direction: column;
+}
+
+.tubeEditBtn{
+    @include flexCentering(center, center);
+    background: $lightred;
+    font-size:18px;
+    letter-spacing: 2px;
+    padding:10px;
+    width:200px;
+    height:30px;
+    margin:2% 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    border:2px solid $lightred;
+    transition: all .2s;
+    img{
+        display: block;
+        margin-right:20px;
+        width:30px;
+    }
+    &:hover{
+        background: transparent;
+        border:2px solid $lightred;
+    }
+}
+#saveVideo{
+    background: $darkred;
+    border:2px solid $darkred;
+    &:hover{
+        background: transparent;
+        border:2px solid $lightred;
+    }
+}
+.drawingTool{
+    @include flexCentering(center, center);
+    border-radius: 50%;
+    padding:20px;
+    margin:0 5px;
+}
+#ytOverlayer{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:999999999;
+}
+#linkPopup{
+    @include flexCentering(center, center);
+    flex-direction: column;
+    background: #0d0d0d;
+    color:#fff;
+    text-align: center;
+    position: absolute;
+    top:0;
+    right:0;
+    padding:0;
+    width:15%;
+    height:100%;
+    z-index:999999;
+    font-size:19px;
+    h1{
+        font-size:27px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        text-align: center;
+        border-bottom: 2px solid #fff;
+        margin-bottom:20%;
+    }
+    p{
+        padding:20px;
+    }
+}
+
+
+
+#popup{
+    @include flexCentering(center, center);
+    flex-direction: column;
+    z-index:999;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:750px;
+    height:550px;
+    background: #1d1d1d;
+    color:#fff;
+    border-radius: 15px;
+    padding:20px;
+    #autoCaptions{
+        border:1px solid #fff;
+        color:#fff;
+        padding:10px 15px;
+        border-radius:15px;
+    }
+    #goBack{
+        position: fixed;
+        top:10%;
+        left:10%;
+        transform: translate(-10%, -10%);
+        img{
+            width:35px;
+            cursor: pointer;
+        } 
+    }
+    #closePopup{
+        position: fixed;
+        top:15%;
+        left:90%;
+        transform: translate(-15%, -90%);
+        img{
+            width:35px;
+            cursor: pointer;
+        }
+    }
+    h1{
+        text-transform: uppercase;
+        font-size:32px;
+        letter-spacing: 7px;
+        border-bottom: 2px solid #fff;
+    }
+    #flexPositioner{
+        @include flexCentering(center, center);
+        flex-direction: column;
+        .stylingOption{
+            @include flexCentering(space-between, space-between);
+            text-align: right;
+            width:80%;
+            margin:10px;
+            padding:10px;
+            cursor: pointer;
+            border:2px solid #fff;
+            transition: all .2s;
+            &:hover{
+                width:100%;
+            }
+            img{
+                width:35px;
+            }
+        }
+        #additionalStyling{
+            @include flexCentering(center, center);
+            flex-direction: column;
+            margin-top:10%;
+            #specifyedStyling{
+                @include flexCentering(center, center);
+                border:1px solid #fff;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                padding:4px 7px;
+                text-align: center;
+                margin-top:5%;
+                font-size:12px;
+                transition: all .2s;
+                cursor: pointer;
+                &:hover{
+                    font-weight: bold;
+                    background: #fff;
+                    color:#000;
+                    border:1px solid #0d0d0d;
+                }
+            }
+        }
+        #addData{
+          //  border:2px solid #fff;
+            @include flexCentering(center, center);
+            #drag{
+                @include flexCentering(center, center);
+                border:2px dashed #fff;
+                padding:10px;
+                width:80px;
+                height:80px;
+                margin:20px;
+            }
+            #addUrl{
+                margin:20px;
+                input{
+                    font-size:17px;
+                    color:#000;
+                    padding:10px;
+                    border:none;
+                    border-radius: 50px;
+                    width:325px;
+                    height:10px;
+                    outline: none;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+            }
+        }
+        #addMediaBtn{
+            margin-top:10%;
+            border:1px solid #fff;
+            padding:10px 25px;
+            color:#fff;
+            font-size:18px;
+            border-radius: 50px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .2s;
+            &:hover{
+                background: $lightred;
+                border:1px solid $lightred;
+            }
+        }
+        
+    }
+}
+#videoOverlayer{
+    cursor: move;
+    position: fixed;
+    z-index:999999;
+    background:$darkred;
+    opacity:0.7;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+#hideTool{
+    @include flexCentering(center, center);
+    position: absolute;
+    z-index: 99999999999999999;
+    top:5%;
+    background: #0d0d0d;
+    border-radius: 50%;
+    padding:10px;
+    transition: all .2s;
+    cursor: pointer;
+    img{
+        width:35px;
+    }
+    &:hover{
+        background: #1d1d1d;
+    }
+}
+
+
+#imgStyleBox, #videoStyleBox{
+    @include flexCentering(center, center);
+    text-align: center;
+    padding:20px;
+    z-index:9999999;
+    flex-direction: column;
+    background: #0d0d0d;
+    height:100%;
+    color:#fff;
+    position: absolute;
+    top:0%;
+    left:0%;
+    cursor: pointer;
+    transition: all .2s;
+    h1{
+        font-size:22px;
+        border-bottom:2px solid #fff;
+    }
+    .imgSize, .videoSize{
+        @include flexCentering(center, center);
+        
+    }
+    img{
+        width:35px;
+    }
+    
+    #imgTime, .videoTime{
+        @include flexCentering(center, center);
+        flex-direction: column;
+        width:100%;
+        margin-top:10%;
+        padding-bottom:20px;
+        border-bottom:2px solid #fff;
+    }
+    .imgTool, .videoTool{
+        @include flexCentering(center, center);
+    }
+    input{
+        border-radius: 15px;
+        border:none;
+        outline:none;
+        border-radius:50px;
+        padding:10px;
+        margin:10px;
+        color:#000;
+        font-size:22px;
+        width:220px;
+        height:10px;
+        &:focus{
+            border:none;
+            outline:none; 
+        }
+    }
+    p{
+        width:100%;
+    }
+}
+
+
+
+#saveEdits{
+    @include flexCentering(center, center);
+    background: $lightred;
+    color:#fff;
+    padding:5px 10px;
+    width:100px;
+    border-radius: 50px;
+    font-size:18px;
+    margin-top:5%;
+    margin-bottom:5%;
+    border:$lightred 2px solid;
+    cursor: pointer;
+    transition: all .2s;
+    &:hover{
+        background: transparent;
+        border:$lightred 2px solid;
+        color:$lightred;
+    }
+}
+
+#imgEditTools{
+    @include flexCentering(center, center);
+    padding:10px;
+    border-radius:1px;
+    div{
+        cursor: pointer;
+        margin:10px;
+    }
+    img{
+        width:35px;
+    }
+}
+
+.simpleTool{
+    @include flexCentering(center, center);
+    flex-direction: column;
+    position: fixed;
+    top:0%;
+    right:0%;
+    background: #0d0d0d;
+    width:15%;
+    height:100%;
+    color:#fff;
+    p{
+        padding:20px;
+        font-size: 17px;
+        text-align: center;
+    }
+}
+
+#savePopup{
+    @include flexCentering(center, center);
+    flex-direction: column;
+    background: #1d1d1d;
+    color:#fff;
+    padding:20px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index:99999999;
+    width:650px;
+    height:50%;
+    border-radius: 15px;
+    a{
+        text-decoration: none;
+    }
+    h1{
+        color:#fff;
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-size:30px;
+    }
+    input{
+        margin:10% 0;
+        border-radius: 25px;
+        padding:7px 5px;
+        width:70%;
+        font-size:22px;
+        color:#000;
+        border:none;
+        outline: none;
+        &:focus{
+            border:none;
+            outline: none;
+        }
+    }
+}
+
+.connector{
+    position: absolute;
+    background: $lightred;
+    border-top:1px solid #0d0d0d;
+    border-bottom:1px solid #0d0d0d;
+    top:55%;
+    z-index: 9999998;
+    height:5px;
+    border-radius: 50px;
+}
+
+#goBack{
+    @include flexCentering(center, center);
+    position: fixed;
+    top:5%;
+    left:3%;
+    z-index: 999999999999999999999999;
+    cursor: pointer;
+}
+.marker{
+    @include flexCentering(center, center);
+    border-radius: 50%;
+    position: absolute;
+    top:25%;
+    z-index: 9999999;
+    cursor: pointer;
+}
+#markerContainer{
+    position: absolute;
+    top:88%;
+    left:0.5%;
+    width:75%;
+    height:5%;
+    border:2px solid #fff;
+}
+#switchSides{
+    @include flexCentering(center, center);
+    position: absolute;
+    top:5%;
+    left:35%;
+    transform: rotate(90deg);
+    padding:10px;
+    border:1px solid #0d0d0d;
+    transition: all .2s;
+    &:hover{
+        border-radius:50%;
+        background: #1d1d1d;
+    }
+}
+
+#hideToolBox{
+    @include flexCentering(center, center);
+    position: absolute;
+    top:5%;
+    left:55%;
+    padding:10px;
+    transition: all .2s;
+    cursor: pointer;
+    &:hover{
+        border-radius:50%;
+        background: #1d1d1d;
+    }  
+}
+#textEndPoint{
+    @include flexCentering(center, center);
+    flex-direction: column;
+}
+#toolBox{
+    @include flexCentering(center, center);
+    img{
+        width:35px;
+    }
+    .tool{
+        @include flexCentering(center, center);
+        padding:5px;
+        width:40px;
+        height:40px;
+        border-radius: 50%;
+        margin:20px;
+        transition: all .2s;
+        cursor: pointer;
+        &:hover{
+            background: #1d1d1d;
+        }
+    }
+}
+#textBox{
+    @include flexCentering(center, space-around);
+    flex-direction: column;
+    position: fixed;
+    top:0;
+    z-index:999;
+    right:0;
+    background: #0d0d0d;
+    width:15%;
+    height:100%;
+    transition: all .2s;
+    p{
+        padding:10px;
+        color:#fff;
+        text-align: center;
+        margin-bottom:20%;
+    }
+    h1{
+        color:#fff;
+        border-bottom: 2px solid #fff;
+    }
+    #buttonsBox{
+        @include flexCentering(center, center);
+        
+    }
+    .redBtn{
+        cursor: pointer;
+        text-align: center;
+        margin:10px;
+        border-radius: 50px;
+        border:2px solid $lightred;
+        padding:5px 10px;
+        color:#fff;
+        transition: all .2s;
+        &:hover{
+            background: $lightred;
+        }
+    }
+    #textSize{
+        @include flexCentering(center, center);
+        flex-direction: column;
+        font-size:24px;
+        margin:10px;
+        input{
+            padding:5px;
+            font-size:20px;
+            text-align: center;
+            color:#000;
+            border-radius: 50px;
+            border:none;
+            outline: none;
+            margin:10px;
+            width:70px;
+            &:focus{
+                outline: none;
+                border: none;
+            }
+        } 
+    }
+    #ownTextBox{
+        @include flexCentering(center, center);
+        flex-direction: column;
+        font-size:24px;
+        margin:10px;
+        input{
+            margin:10px;
+            border-radius: 50px;
+            border:none;
+            outline:none;
+            padding:5px;
+            font-size:19px;
+            width:240px;
+            height:20px;
+            width:80%;
+            color:#000;
+            &:focus{
+                border:none;
+                outline:none;  
+            }
+        }
+    }
+    #textBackground{
+        @include flexCentering(center, center);
+        flex-direction: column;
+        font-size:24px;
+        margin:10px;
+        input{
+            background:transparent;
+            border:none;
+            outline:none;
+            width:50px;
+            height:50px;
+            cursor: pointer;
+            &:focus{
+                border:none;
+                outline:none;  
+            }
+        }
+        
+    }
+    #textColor{
+        @include flexCentering(center, center);
+        flex-direction: column;
+        background:transparent;
+        margin:10px;
+        font-size:24px;
+        border:none;
+        outline:none;
+        input{
+            background:transparent;
+            border:none;
+            outline:none;
+            width:50px;
+            height:50px;
+            cursor: pointer;
+            &:focus{
+                border:none;
+                outline:none;  
+            }
+        }
+    }
+}
+
+#videoText{
+    cursor: pointer;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color:#fff;
+    padding:5px;
+}
+#imgManipulation{
+    @include flexCentering(center, center);
+    background: #0d0d0d;
+    border-radius: 50px;
+    padding:3px;
+    width:30px;
+    div{
+        @include flexCentering(center, center);
+        margin:1px;
+        cursor: pointer;
+        transition: all .2s;
+        width:20px;
+        height:20px;
+        padding:5px;
+        &:hover{
+            border-radius: 50%;
+            background: #1d1d1d;
+        }
+    }
+    #rotateImage, #rotateReverseImage{
+        img{
+            width:15px;
+        }
+    }
+    
+    img{
+        width:20px;
+    }
+
+}
+#brushBox{
+    @include flexCentering(center, space-around);
+    flex-direction: column;
+    position: fixed;
+    height:100%;
+    top:0;
+    right:0;
+    width:15%;
+    z-index:99999;
+    background:#0d0d0d;
+    color: #FFF;
+    font-size: 17px;
+    transition: all .5s;
+    p{
+        padding:20px;
+        text-align: center;
+    }
+    h1{
+        border-bottom:2px solid #fff;
+    }
+    input{
+        color:#0d0d0d;
+        border-radius: 50px;
+        border:none;
+        padding:5px 10px;
+        font-size:20px;
+        text-align: center;
+        transition: all .2s;
+        &:focus{
+            outline: none;
+        }
+        &::placeholder{
+            color:#0d0d0d;
+        }
+    }
+    #colorPicker{
+        input{
+            padding:10px;
+            width:35px;
+            height:35px;
+            background: transparent;
+            border:none;
+            outline: none;
+            cursor: pointer;
+            &:focus{
+                border:none;
+                outline: none;  
+            }
+        }
+    }
+    #i{
+        @include flexCentering(center, center);
+        
+        #brushTool{
+            background: #1d1d1d;
+        }
+        img{
+            width:35px;
+        }
+    }
+    #brushSizes{
+        @include flexCentering(center, center);
+        .size{
+            border:5px solid #fff;
+            background: #fff;
+            border-radius:50%;
+            margin:10px;
+            cursor: pointer;
+        }
+        #small{
+            width:5px;
+            height:5px;
+        }
+        #medium{
+            width:15px;
+            height:15px;
+        }
+        #big{
+            width:25px;
+            height:25px;
+        }
+    }
+}
+
+canvas{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:9999;
+}
+
+#switchBox{
+    @include flexCentering(center, center);
+    flex-direction: column;
+    h1{
+        border-bottom:2px solid #fff;
+    }
+    position: fixed;
+    top:0;
+    right:0;
+    padding:20px;
+    background: rgba(29, 29, 29, 0.9);
+    color:#fff;
+}
+
+#videoBox{
+    @include flexCentering(center, center);
+    user-select: none;
+    background: #0d0d0d;
+    border-radius: 50px;
+    padding:10px;
+    width:30px;
+    cursor: move;
+    div{
+        @include flexCentering(center, center);
+        margin:1px;
+        cursor: pointer;
+        transition: all .2s;
+        width:20px;
+        height:20px;
+        padding:5px;
+        &:hover{
+            border-radius: 50%;
+            background: #1d1d1d;
+        }
+    }
+    #rotateImage, #rotateReverseImage{
+        img{
+            width:15px;
+        }
+    }
+    
+    img{
+        width:20px;
+    }
+}
+
+.noSelect{
+    -webkit-touch-callout: none; 
+      -webkit-user-select: none; 
+       -khtml-user-select: none; 
+         -moz-user-select: none; 
+          -ms-user-select: none; 
+              user-select: none;                            
+}
+
+#saveDrawing{
+    @include flexCentering(center, center);
+    color:#fff;
+    background: $lightred;
+    border:2px solid $lightred;
+    border-radius: 50px;
+    padding:10px 15px;
+    margin-top:5%;
+    cursor: pointer;
+    transition: all .2s;
+    &:hover{
+        background: transparent;
+    }
+}
+#audioBox{
+    position: absolute;
+    top:0;
+    z-index:99999999;
+    background: #0d0d0d;
+}

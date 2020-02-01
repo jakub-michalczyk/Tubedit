@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque|Roboto+Condensed&display=swap');
+
+$lightred: #ff0000;
+$darkred: darken(#ff0000, 20%);
+
+@media screen and (max-width: 1000px) {
+    #menuButtonsBox {
+      flex-direction: column;
+      .typeInfo{
+          margin:10px 0 !important;
+      }
+    }
+  }
+
+@mixin flexCentering($alignItem, $justifyCont) {
+    display: flex;
+    justify-content: $justifyCont;
+    align-items:$alignItem
+}
+*{
+    font-family: 'Darker Grotesque', sans-serif;
+    color:#fff;
+}
+
+@media screen and (max-width: 414px) {
+    #menuButtonsBox{
+        a{
+            width:80% !important;
+        }
+        #edit, #watch{
+            width:80% !important;
+        }
+    }
+}
+
+body, html{
+    margin:0;
+    width:100%;
+    height:100%;
+}
+
+a{
+    margin: 0;
+    text-decoration: none;
+}
+
+#bg{
+    @include flexCentering('centet', 'flex-start');
+    background: #0d0d0d;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+    #mainTitle{
+        font-family: 'Roboto Condensed', sans-serif;
+        color:#fff;
+        font-size: 23px;
+        margin:0;
+        text-transform: uppercase;
+        padding:20px;
+        text-align: center;
+        letter-spacing: 5px;
+    }
+    nav{
+        background: $lightred;
+        ul{
+            @include flexCentering(center, space-between);
+            list-style: none;
+            padding:10px 0;
+            margin:0px;
+            #whatIsIt{
+                text-align: center;
+                padding:10px 15px;
+                margin:10px;
+                width:auto;
+                border:1px solid #fff;
+                border-radius:50px;
+                transition: all .2s;
+                cursor:pointer;
+                &:hover{
+                    background: #fff;
+                    color:$lightred;
+                }
+            }
+        }
+    }
+}
+#overlayer{
+    position: absolute;
+    z-index:1;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background: #0d0d0d;
+    opacity:0.8;
+}
+#howTo{
+    transition: all .2s;
+    cursor:pointer;
+    &:hover{
+        background: #fff;
+        color:$lightred;
+    }
+}
+.infoBox{
+    @include flexCentering(center, center);
+    position: absolute;
+    width:100%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index:999999;
+}
+
+#tubeditInfo{
+    @include flexCentering(center, center);
+    flex-direction: column;
+    background: #1d1d1d;
+    border-radius: 5px;
+    width:75%;
+    height:auto;
+    padding:20px;
+    span{
+        @include flexCentering(center, center);
+        font-weight: bold;
+        color: $lightred;
+        padding-right: 10px;
+        font-size:42px;
+        letter-spacing: 3px;
+        display: block;
+    }
+    h2{
+        @include flexCentering(center, center);
+        color:#fff;
+        text-align: center;
+        font-weight: normal;
+        font-size: 25px;  
+    }
+    #tubeditInfoBtn{
+        @include flexCentering(center, center);
+        margin-top:3%;
+        background: $lightred;
+        color:#fff;
+        border-radius: 5px;
+        padding:10px 5px;
+        width:30%;
+        height:10%;
+        transition: all .2s;
+        cursor: pointer;
+        &:hover{
+            background: $darkred;
+        }
+    }
+}
+
+#container{
+    @include flexCentering(center, center);
+    flex-direction: row;
+    width:100%;
+    height:90%;
+    #stepBox{
+        @include flexCentering(center, center);
+        width:90%;
+        height:auto;
+        flex-direction: column;
+        .containerText{
+            text-align: center;
+            font-family: 'Roboto Condensed', sans-serif;
+            letter-spacing: 5px;
+            color:#fff;
+            font-size:22px;
+        }
+        
+        #pasteArea{
+            resize: none;
+            width:95%;
+            max-width:95%;
+            height:40px;
+            color:#000;
+            border-radius:50px;
+            font-size:20px;
+            padding:5px 10px;
+            &:focus{
+                outline: none;
+            }
+        }
+        #saveInfo{
+            @include flexCentering(center, center);
+            margin:50px 20px;
+            background: transparent;
+            text-align: center;
+            border:1px solid #fff;
+            color:#fff;
+            padding:0px;
+            width:150px;
+            height:50px;
+            border-radius:50px;
+            letter-spacing:5px;
+            outline:none;
+            font-size:22px;
+            transition: all .2s;
+            cursor: pointer;
+            &:hover{
+                border:1px solid $darkred;
+                background: $darkred;
+                color:#fff;
+            }
+            &:focus{
+                outline:none; 
+            }
+        }
+        .addidionInfo{
+            @include flexCentering(center, center);
+            color:#fff;
+            cursor: pointer;
+            margin-top:5%;
+            transition: all .2s;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    #timelineBox{
+        width:1000px;
+        height:500px;
+        #timeline{
+            width:1000px;
+            height:10px;
+            background: red;
+        }
+    }
+}
+#videoText{
+    cursor: pointer;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color:#fff;
+    padding:5px;
+}
+#menuButtonsBox{
+    @include flexCentering(center, center);
+    flex-wrap: wrap;
+    width:100%;
+    height: 50%;
+    max-width:100%;
+    a{
+        @include flexCentering(center, center);
+        background-color: $darkred;
+        width: 30%;
+        height:auto;
+        padding:0;
+        margin:0;
+        text-decoration: none;
+        #watch{
+            width: 100%;
+        }
+        &:hover{
+            letter-spacing: 3px;
+        }
+    }
+    .typeInfo{
+        height: auto;
+        background:$darkred;
+        border:2px solid $darkred;
+        margin:0 20px;
+        color:#fff;
+        text-transform: uppercase;
+        text-align: center;
+        padding:10px 0;
+        transition: all .2s;
+        cursor: pointer;
+    }
+    #edit, #watch{
+        @include flexCentering(center, center);
+        width: 30%;
+        img{
+            width:50px;
+            transition: all .2s;
+            margin:10px;
+        }
+        div{
+            margin:10px;
+        }
+        &:hover{
+           letter-spacing: 3px;
+        }
+    }
+}
+
+#goBack{
+    position: fixed;
+    top:5.5%;
+    left:3%;
+    cursor: pointer;
+}
+
+#topBar{
+    @include flexCentering(center, space-between);
+    background: $lightred;
+    height:10%;
+    #mainTitle{
+        font-family: 'Roboto Condensed', sans-serif;
+        color:#fff;
+        font-size: 23px;
+        margin:0;
+        text-transform: uppercase;
+        padding:20px;
+        text-align: center;
+        letter-spacing: 3px;
+    }
+    ul{
+        @include flexCentering(flex-end, center);
+        list-style: none;
+        margin:0;
+        padding:0;
+        li{
+            padding:10px 15px;
+            margin:10px;
+            width:auto;
+            border:1px solid #fff;
+            border-radius:50px;
+        }
+    }
+}
+
+#watchVideoInfo{
+    @include flexCentering(center, center);
+    font-family: 'Roboto Condensed', sans-serif;
+    background: $darkred;
+    color:#fff;
+    padding:20px;
+    height:1px;
+    animation: slidingIn 1s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes slidingIn{
+    from {height:1px}
+    to {height:150px}
+}
+
+#editedImg{
+    position: fixed;
+    z-index:99999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    cursor: move;
+}
+#addedVideo{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    border:none;
+    outline: none;
+}
+.addedImg{
+    width:35px;
+    position: absolute;
+    top:-30%;
+}
+#addedVideo{
+    position: fixed;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+}
+#addedDrawing{
+    position: absolute;
+    top:0;
+    max-width: 100%;
+    max-height: 100%;
+    z-index:99999999;
+}
+#playingVideo{
+    position: absolute;
+    background: #0d0d0d;
+    z-index:99999;
+}
+#editedImg, #playingVideo, #videoText{
+    transform: translate(-50%, -50%);
+}

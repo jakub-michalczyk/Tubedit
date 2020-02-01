@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css?family=Darker+Grotesque|Roboto+Condensed&display=swap");
+@media screen and (max-width: 1000px) {
+  #menuButtonsBox {
+    flex-direction: column;
+  }
+  #menuButtonsBox .typeInfo {
+    margin: 10px 0 !important;
+  }
+}
+* {
+  font-family: "Darker Grotesque", sans-serif;
+  color: #fff;
+}
+
+@media screen and (max-width: 414px) {
+  #menuButtonsBox a {
+    width: 80% !important;
+  }
+  #menuButtonsBox #edit, #menuButtonsBox #watch {
+    width: 80% !important;
+  }
+}
+body, html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+}
+
+#bg {
+  display: flex;
+  justify-content: "flex-start";
+  align-items: "centet";
+  background: #0d0d0d;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+#bg #mainTitle {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #fff;
+  font-size: 23px;
+  margin: 0;
+  text-transform: uppercase;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 5px;
+}
+#bg nav {
+  background: #ff0000;
+}
+#bg nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0px;
+}
+#bg nav ul #whatIsIt {
+  text-align: center;
+  padding: 10px 15px;
+  margin: 10px;
+  width: auto;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#bg nav ul #whatIsIt:hover {
+  background: #fff;
+  color: #ff0000;
+}
+
+#overlayer {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0d0d0d;
+  opacity: 0.8;
+}
+
+#howTo {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#howTo:hover {
+  background: #fff;
+  color: #ff0000;
+}
+
+.infoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999999;
+}
+
+#tubeditInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #1d1d1d;
+  border-radius: 5px;
+  width: 75%;
+  height: auto;
+  padding: 20px;
+}
+#tubeditInfo span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #ff0000;
+  padding-right: 10px;
+  font-size: 42px;
+  letter-spacing: 3px;
+  display: block;
+}
+#tubeditInfo h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+  font-size: 25px;
+}
+#tubeditInfo #tubeditInfoBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  background: #ff0000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 5px;
+  width: 30%;
+  height: 10%;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#tubeditInfo #tubeditInfoBtn:hover {
+  background: #990000;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 90%;
+}
+#container #stepBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  flex-direction: column;
+}
+#container #stepBox .containerText {
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+  letter-spacing: 5px;
+  color: #fff;
+  font-size: 22px;
+}
+#container #stepBox #pasteArea {
+  resize: none;
+  width: 95%;
+  max-width: 95%;
+  height: 40px;
+  color: #000;
+  border-radius: 50px;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+#container #stepBox #pasteArea:focus {
+  outline: none;
+}
+#container #stepBox #saveInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 20px;
+  background: transparent;
+  text-align: center;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0px;
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  letter-spacing: 5px;
+  outline: none;
+  font-size: 22px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#container #stepBox #saveInfo:hover {
+  border: 1px solid #990000;
+  background: #990000;
+  color: #fff;
+}
+#container #stepBox #saveInfo:focus {
+  outline: none;
+}
+#container #stepBox .addidionInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 5%;
+  transition: all 0.2s;
+}
+#container #stepBox .addidionInfo:hover {
+  text-decoration: underline;
+}
+#container #timelineBox {
+  width: 1000px;
+  height: 500px;
+}
+#container #timelineBox #timeline {
+  width: 1000px;
+  height: 10px;
+  background: red;
+}
+
+#videoText {
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 5px;
+}
+
+#menuButtonsBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 50%;
+  max-width: 100%;
+}
+#menuButtonsBox a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #990000;
+  width: 30%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+#menuButtonsBox a #watch {
+  width: 100%;
+}
+#menuButtonsBox a:hover {
+  letter-spacing: 3px;
+}
+#menuButtonsBox .typeInfo {
+  height: auto;
+  background: #990000;
+  border: 2px solid #990000;
+  margin: 0 20px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 0;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#menuButtonsBox #edit, #menuButtonsBox #watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+#menuButtonsBox #edit img, #menuButtonsBox #watch img {
+  width: 50px;
+  transition: all 0.2s;
+  margin: 10px;
+}
+#menuButtonsBox #edit div, #menuButtonsBox #watch div {
+  margin: 10px;
+}
+#menuButtonsBox #edit:hover, #menuButtonsBox #watch:hover {
+  letter-spacing: 3px;
+}
+
+#goBack {
+  position: fixed;
+  top: 5.5%;
+  left: 3%;
+  cursor: pointer;
+}
+
+#topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff0000;
+  height: 10%;
+}
+#topBar #mainTitle {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #fff;
+  font-size: 23px;
+  margin: 0;
+  text-transform: uppercase;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+#topBar ul {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#topBar ul li {
+  padding: 10px 15px;
+  margin: 10px;
+  width: auto;
+  border: 1px solid #fff;
+  border-radius: 50px;
+}
+
+#watchVideoInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Condensed", sans-serif;
+  background: #990000;
+  color: #fff;
+  padding: 20px;
+  height: 1px;
+  animation: slidingIn 1s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes slidingIn {
+  from {
+    height: 1px;
+  }
+  to {
+    height: 150px;
+  }
+}
+#editedImg {
+  position: fixed;
+  z-index: 99999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: move;
+}
+
+#addedVideo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  border: none;
+  outline: none;
+}
+
+.addedImg {
+  width: 35px;
+  position: absolute;
+  top: -30%;
+}
+
+#addedVideo {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+
+#addedDrawing {
+  position: absolute;
+  top: 0;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 99999999;
+}
+
+#playingVideo {
+  position: absolute;
+  background: #0d0d0d;
+  z-index: 99999;
+}
+
+#editedImg, #playingVideo, #videoText {
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=style.css.map */
