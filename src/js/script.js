@@ -35,7 +35,7 @@ function editVideo(){
             <div id="goBack" style="top:15%">
                 <img src='../img/goBack.png'>
             </div>
-            <h2 class="containerText">Okay, first we need your video. Please paste link to your's video here.</h2>
+            <h2 class="containerText">Please paste link to YouTube video below.</h2>
             <input type="text" id="pasteArea">
             <input type="button" id="saveInfo" value="Done">
          </div>`
